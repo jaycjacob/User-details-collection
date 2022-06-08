@@ -1,0 +1,17 @@
+body{
+    background-color: rgba(170, 115, 44, 0.87);
+}
+h1{
+    
+    color: white;
+}
+label{
+    size: 100px;
+    color: white;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto;
+    text-align: center;
+    background-color: #2196F3;
+}
