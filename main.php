@@ -16,6 +16,7 @@ include 'insertmain.php';
 form {
 				width: 50%;
 				margin: 40px auto;
+        background-color:red;
 			}
 input,
 label{
