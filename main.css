@@ -1,17 +1,31 @@
 body{
-    background-color: rgba(170, 115, 44, 0.87);
+    background-color: rgba(255, 255, 255,0.2);
 }
-h1{
-    
-    color: white;
-}
+
+form {
+				width: 50%;
+				margin: 40px auto;
+			}
+input,
 label{
-    size: 100px;
-    color: white;
+		display: block;
+		width: 80%;
+		margin-left: 20px;
+		padding: 10px 0;
 }
-.grid-container{
-    display: grid;
-    grid-template-columns: auto;
-    text-align: center;
-    background-color: #2196F3;
-}
+input[type="submit"] {
+				margin: 20px;
+				color: white;
+				background-color: dodgerblue;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+.success {
+				color: green;
+				font-weight: bold;
+			}
+.error {
+				margin-left: 20px;
+				color: red;
+				font-weight: bold;
+			}
