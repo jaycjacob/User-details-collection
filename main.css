@@ -1,0 +1,31 @@
+body{
+    background-color: rgba(255, 255, 255,0.2);
+}
+
+form {
+				width: 50%;
+				margin: 40px auto;
+			}
+input,
+label{
+		display: block;
+		width: 80%;
+		margin-left: 20px;
+		padding: 10px 0;
+}
+input[type="submit"] {
+				margin: 20px;
+				color: white;
+				background-color: dodgerblue;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+.success {
+				color: green;
+				font-weight: bold;
+			}
+.error {
+				margin-left: 20px;
+				color: red;
+				font-weight: bold;
+			}
