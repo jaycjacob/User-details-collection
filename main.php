@@ -10,13 +10,13 @@ include 'insertmain.php';
     <title></title>
     <style>
       body{
-    background-color: rgba(255, 255, 255,0.2);
+    background-color: rgba(255, 255,0,0.2);
 }
 
 form {
 				width: 50%;
 				margin: 40px auto;
-        background-color:red;
+        
 			}
 input,
 label{
@@ -68,7 +68,7 @@ input[type="submit"] {
      <input type="email" id="email" name="email" class="input-text">
      <span class="error"> <?php echo $emailError ?> </span>
     </div>
-     <input type="submit" value="Submit"">
+     <input type="submit" value="Submit">
 
    </form>
 
