@@ -10,26 +10,26 @@
 			$gotError = true;
 			$pnumberError = "pnumber is required";
 		}else{
-			$pnumber = $_POST["pnumber"];
+			$pnumber = test_input($_POST["pnumber"]);
 		}
 		if(empty($_POST["fname"])){
 			$gotError = true;
 			$fnameError = "fname is required";
 			
 		}else{
-			$fname = $_POST["fname"];
+			$fname = test_input($_POST["fname"]);
 		}
         if(empty($_POST["lname"])){
 			$gotError = true;
 			$fnameError = "lname is required";
 		}else{
-			$lname = $_POST["lname"];
+			$lname = test_input($_POST["lname"]);
 		}
 		if(empty($_POST["email"])){
 			$gotError = true;
 			$emailError = "Email is required";
 		}else{
-			$email = $_POST["email"]; 
+			$email = test_input($_POST["email"]); 
 		}
 		if(!$gotError){
 			try{
@@ -49,6 +49,14 @@
 				$formMsg = '<div class="error"> Could not insert record" ' . $e->getMessage().'</div>';
 			}
 		}	
+	}
+	function test_input($data){
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		
+		return $data;
+
 	}
 ?>
 
