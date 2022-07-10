@@ -49,7 +49,7 @@ input[type="submit"] {
     <h4>Employees Registration Form </h4>
      <?php echo $formMsg ?>
      <div>
-     <label for="phone">Phone Number1:</label><br>
+     <label for="phone">Phone Number:</label><br>
      <input type="number" id="pnumber" name="pnumber" class="input-text">
      <span class="error"> <?php echo $pnumberError ?> </span>
      </div>
@@ -57,16 +57,19 @@ input[type="submit"] {
      <label for="fname">First Name:</label><br>
      <input type="text" id="fname" name="fname" class="input-text">
      <span class="error"> <?php echo $fnameError ?> </span>
+     <span class="error"><?php echo $fError ?></span>
     </div>
     <div>
      <label for="lname">Second Name:</label><br>
      <input type="text" id="lname" name="lname"class="input-text">
      <span class="error"> <?php echo $lnameError ?> </span>
+     <span class="error"><?php echo $lError ?></span>
     </div>
     <div>
      <label for="email">Email:</label><br>
      <input type="email" id="email" name="email" class="input-text">
      <span class="error"> <?php echo $emailError ?> </span>
+     <span class="error"><?php echo $eError ?></span>
     </div>
      <input type="submit" value="Submit">
 

@@ -2,6 +2,7 @@
 	include __DIR__ .'/pdo_connection.php';
 	$pnumber = $fname = $lname = $email='';
 	$pnumberError = $fnameError = $lnameError = $emailError = $formMsg ='';
+	$fError = $lError = $eError = '';
 	$gotError = false;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		//$sex = $_POST["sex"];
@@ -18,18 +19,33 @@
 			
 		}else{
 			$fname = test_input($_POST["fname"]);
+			//check if fname only contains letters and whitespace
+			if(!preg_match("/^[a-zA-Z-']*$/",$fname)){
+				$gotError = true;
+				$fError = "Only letters adn white space allowed";
+			}
 		}
         if(empty($_POST["lname"])){
 			$gotError = true;
 			$fnameError = "lname is required";
 		}else{
 			$lname = test_input($_POST["lname"]);
+			//check if lname only contains letters and whitespace
+			if(!preg_match("/^[a-zA-Z-']*$/",$lname)){
+				$gotError = true;
+				$lError = "Only letters and white space allowed";
+			}				
 		}
 		if(empty($_POST["email"])){
 			$gotError = true;
 			$emailError = "Email is required";
 		}else{
 			$email = test_input($_POST["email"]); 
+			//check if email address is well-formed
+			if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+				$gotError = true;
+				$eError = "Invalid email format";
+			}
 		}
 		if(!$gotError){
 			try{
