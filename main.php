@@ -56,19 +56,20 @@ input[type="submit"] {
     <div>
      <label for="fname">First Name:</label><br>
      <input type="text" id="fname" name="fname" class="input-text">
-     <span class="error"> <?php echo $fnameError ?> </span>
+     <span class="error">* <?php echo $fnameError ?> </span>
+     
      <span class="error"><?php echo $fError ?></span>
     </div>
     <div>
      <label for="lname">Second Name:</label><br>
      <input type="text" id="lname" name="lname"class="input-text">
-     <span class="error"> <?php echo $lnameError ?> </span>
+     <span class="error">* <?php echo $lnameError ?> </span>
      <span class="error"><?php echo $lError ?></span>
     </div>
     <div>
      <label for="email">Email:</label><br>
      <input type="email" id="email" name="email" class="input-text">
-     <span class="error"> <?php echo $emailError ?> </span>
+     <span class="error">* <?php echo $emailError ?> </span>
      <span class="error"><?php echo $eError ?></span>
     </div>
      <input type="submit" value="Submit">
