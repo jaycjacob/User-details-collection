@@ -17,11 +17,8 @@ try {
 )";
 $sql3 = "USE records";
 $conn->exec($sql);
-echo "1.<br>";
 $conn->exec($sql3);
-echo "2.<br>";
 $conn->exec($sql2);
-  echo "CONNECT SUCCESSFULLY.<br>";
 } catch (PDOException $e) {
   echo "connection failed1 <br>". $e->getMessage();
 }

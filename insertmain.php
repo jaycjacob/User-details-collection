@@ -22,7 +22,7 @@
 			//check if fname only contains letters and whitespace
 			if(!preg_match("/^[a-zA-Z-']*$/",$fname)){
 				$gotError = true;
-				$fError = "Only letters adn white space allowed";
+				$fError = "Only letters and white space allowed";
 			}
 		}
         if(empty($_POST["lname"])){
@@ -62,7 +62,7 @@
 				$stmt->execute();
 				$formMsg = '<div class="success">'.$fname.' '.$lname.': Record inserted successfully.</div>';
 			}catch(PDOException $e){
-				$formMsg = '<div class="error"> Could not insert record" ' . $e->getMessage().'</div>';
+				$formMsg = '<div class="error"> Could not insert record. Try again." ' . $e->getMessage().'</div>';
 			}
 		}	
 	}
