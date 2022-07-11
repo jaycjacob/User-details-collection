@@ -34,7 +34,7 @@
 			if(!preg_match("/^[a-zA-Z-']*$/",$lname)){
 				$gotError = true;
 				$lError = "Only letters and white space allowed";
-			}				
+			}
 		}
 		if(empty($_POST["email"])){
 			$gotError = true;
