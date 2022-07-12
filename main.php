@@ -72,6 +72,13 @@ input[type="submit"] {
      <span class="error"><?php echo $emailError ?> </span>
      <span class="error"><?php echo $eError ?></span>
     </div>
+    <div>
+      <label for="Gender">Gender:<span class="error">*</span></label><br>
+      <input type="radio" name="gender" value="male"> Male
+      <input type="radio" name="gender" value="female">Female
+      <input type="radio" name="gender" value="other">Other
+      <span><?php echo $genderError ?>
+    </div>  
      <input type="submit" value="Submit">
 
    </form>
