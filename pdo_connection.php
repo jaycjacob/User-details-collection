@@ -13,6 +13,7 @@ try {
     first_name VARCHAR(255) NOT NULL,
     second_name VARCHAR(255) NOT NULL,
     email VARCHAR(50) NOT NULL,
+    gender VARCHAR(20) NOT NULL,
     PRIMARY KEY (phone_no)
 )";
 $sql3 = "USE records";
