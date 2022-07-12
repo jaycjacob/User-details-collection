@@ -1,7 +1,7 @@
 <?php
 	include __DIR__ .'/pdo_connection.php';
-	$pnumber = $fname = $lname = $email='';
-	$pnumberError = $fnameError = $lnameError = $emailError = $formMsg ='';
+	$pnumber = $fname = $lname = $email= $gender='';
+	$pnumberError = $fnameError = $lnameError = $emailError = $genderError = $formMsg ='';
 	$fError = $lError = $eError = '';
 	$gotError = false;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -46,6 +46,12 @@
 				$gotError = true;
 				$eError = "Invalid email format";
 			}
+		}
+		if(empty($_POST["gender"])){
+			$gotError = true;
+			$genderError = "Gender is required";
+		}else{
+			$gender = test_input($_POST["gender"]);
 		}
 		if(!$gotError){
 			try{
