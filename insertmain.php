@@ -56,14 +56,15 @@
 		if(!$gotError){
 			try{
 				//Prepare statement query
-				$query = "INSERT INTO `details`(phone_no, first_name, second_name, email) 
-						VALUES(:pnumber, :fname, :lname, :email)";
+				$query = "INSERT INTO `details`(phone_no, first_name, second_name, email, gender) 
+						VALUES(:pnumber, :fname, :lname, :email, :gender)";
 				$stmt = $conn->prepare($query);
 				//Bind parameters
 				$stmt->bindParam(':pnumber', $pnumber);
 				$stmt->bindParam(':fname', $fname);
                 $stmt->bindParam(':lname', $lname);
 				$stmt->bindParam(':email', $email);
+				$stmt->bindParam(':gender', $gender);
 				//Insert the record by executing the query
 				$stmt->execute();
 				$formMsg = '<div class="success">'.$fname.' '.$lname.': Record inserted successfully.</div>';
