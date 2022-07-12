@@ -7,7 +7,7 @@ try {
   $conn = new PDO("mysql:host=$servername;",$username,$password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = "CREATE DATABASE IF NOT EXISTS records";
+  $sql = "CREATE DATABASE IF NOT EXISTS record1";
   $sql2 = "CREATE TABLE IF NOT EXISTS details (
     phone_no INT NOT NULL,
     first_name VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ try {
     gender VARCHAR(20) NOT NULL,
     PRIMARY KEY (phone_no)
 )";
-$sql3 = "USE records";
+$sql3 = "USE record1";
 $conn->exec($sql);
 $conn->exec($sql3);
 $conn->exec($sql2);
