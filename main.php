@@ -44,9 +44,9 @@ input[type="submit"] {
     </style>
   </head>
   <body>
-   <h1>Enter Your details.</h1>
    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-    <h4>Employees Registration Form </h4>
+   <h1>Employees data collection form.</h1>
+    <h4><i>Kindly enter your details here: </i></h4>
      <?php echo $formMsg ?>
      <div>
      <label for="phone">Phone Number:</label><br>
