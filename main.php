@@ -308,7 +308,8 @@ input[type="submit"] {
   </div>
      <div>
      <label for="phone">Phone Number:</label><br>
-     <input type="tel" id="pnumber" name="pnumber" class="input-text" required>
+     <input type="tel" id="pnumber" name="pnumber" class="input-text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+     <span>Enter phone number in this format: 123-456-7890</span>
      <span class="error"> <?php echo $pnumberError ?> </span>
      </div>
     <div>
