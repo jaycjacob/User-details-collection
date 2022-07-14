@@ -308,7 +308,7 @@ input[type="submit"] {
   </div>
      <div>
      <label for="phone">Phone Number:</label><br>
-     <input type="tel" id="pnumber" name="pnumber" class="input-text">
+     <input type="tel" id="pnumber" name="pnumber" class="input-text" required>
      <span class="error"> <?php echo $pnumberError ?> </span>
      </div>
     <div>
