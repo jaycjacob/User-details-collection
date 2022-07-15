@@ -1,7 +1,7 @@
 <?php
 	include __DIR__ .'/pdo_connection.php';
-	$pnumber = $fname = $lname = $email= $gender='';
-	$pnumberError = $fnameError = $lnameError = $emailError = $genderError = $formMsg ='';
+	$pnumber = $fname = $lname = $email= $gender = $country = '';
+	$pnumberError = $fnameError = $lnameError = $emailError = $genderError = $formMsg = $countryError ='';
 	$fError = $lError = $eError = '';
 	$gotError = false;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -53,11 +53,17 @@
 		}else{
 			$gender = test_input($_POST["gender"]);
 		}
+		if(empty($_POST["country"]) || $_POST["country"]=="country"){
+			$gotError = true;
+			$countryError = "Country is required.";
+		}else{
+			$country = test_input($_POST["country"]);
+		}
 		if(!$gotError){
 			try{
 				//Prepare statement query
-				$query = "INSERT INTO `details`(phone_no, first_name, second_name, email, gender) 
-						VALUES(:pnumber, :fname, :lname, :email, :gender)";
+				$query = "INSERT INTO `details`(phone_no, first_name, second_name, email, gender, country) 
+						VALUES(:pnumber, :fname, :lname, :email, :gender, :country)";
 				$stmt = $conn->prepare($query);
 				//Bind parameters
 				$stmt->bindParam(':pnumber', $pnumber);
@@ -65,6 +71,7 @@
                 $stmt->bindParam(':lname', $lname);
 				$stmt->bindParam(':email', $email);
 				$stmt->bindParam(':gender', $gender);
+				$stmt->bindParam(':country', $country);
 				//Insert the record by executing the query
 				$stmt->execute();
 				$formMsg = '<div class="success">'.$fname.' '.$lname.': Record inserted successfully.</div>';

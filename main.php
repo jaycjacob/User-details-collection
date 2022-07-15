@@ -50,7 +50,7 @@ input[type="submit"] {
      <?php echo $formMsg ?>
      <div>
      <label for="country">Choose your country:</label>
-     <selectid="country" name="country"></select>
+     <select id="country" name="country"></select>
      </div>
     
     <select id="country" name="country">
@@ -305,10 +305,11 @@ input[type="submit"] {
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
     </select>
+    <span class="error"><?php echo $countryError ?></span>
   </div>
      <div>
      <label for="phone">Phone Number:</label><br>
-     <input type="tel" id="pnumber" name="pnumber" class="input-text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+     <input type="tel" id="pnumber" name="pnumber" class="input-text" pattern="[0-9]{9}" required>
      <span>Enter phone number in this format: 123-456-7890</span>
      <span class="error"> <?php echo $pnumberError ?> </span>
      </div>
