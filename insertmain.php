@@ -74,9 +74,9 @@
 				$stmt->bindParam(':country', $country);
 				//Insert the record by executing the query
 				$stmt->execute();
-				$formMsg = '<div class="success">'.$fname.' '.$lname.': Record inserted successfully.</div>';
+				$formMsg = '<script>alert("Record inserted successfully.")</script>';
 			}catch(PDOException $e){
-				$formMsg = '<div class="error"> Could not insert record. Try again." ' . $e->getMessage().'</div>';
+				$formMsg = '<script> alert("Could not insert record. Try again. ' . $e->getMessage().'")</script>';
 			}
 		}	
 	}
